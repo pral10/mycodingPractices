@@ -16,6 +16,8 @@ def linked_list_values(head):
     return output
 
 
+
+
 def main():
     a = Node("a")
     b = Node("b")
