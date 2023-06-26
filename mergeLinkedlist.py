@@ -12,23 +12,24 @@ class Node:
         self.next = None
 
 def merge_lists(head1, head2):
-    list3 = Node(None)
-    list4 = list3
+    head = Node(None)
+    list3 = head
     current1 = head1
     current2 = head2
     while current1 is not None and current2 is not None:
         if current1.val < current2.val:
-            list4.next = current1
+            list3.next = current1
             current1 = current1.next
         else:
-            list4.next = current2
+            list3.next = current2
             current2 = current2.next
-        list4 = list4.next
+        list3 = list3.next
     if current1 is not None:
-            list4.next = current1
+            list3.next = current1
     if current2 is not None:
-            list4.next = current2
-    return list3.next
+            list3.next = current2
+    return head.next
+
 def main():
     a = Node(5)
     b = Node(7)
@@ -52,10 +53,11 @@ def main():
     s.next = t
     # 6 -> 8 -> 9 -> 25
 
-    lol = (merge_lists(a, q))
+    lol =  (merge_lists(a, q))
     while lol is not None:
         print (lol.val)
         lol = lol.next
+
     # 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 12 -> 20 -> 25 -> 28
 if __name__ == "__main__":
     main()
