@@ -31,7 +31,7 @@ def add_lists(head1, head2):
         if total > 9:
             carry = 1
         else:
-            carry = 0
+            carry =  0
         digit = total % 10
         working.next = Node(digit)
         working = working.next
